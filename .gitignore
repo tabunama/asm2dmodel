@@ -1,0 +1,66 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Build outputs
+build/
+dist/
+wheelhouse/
+*.egg-info/
+.eggs/
+
+# Local environments
+.venv/
+venv/
+env/
+
+# Binary extension outputs
+*.pyd
+*.dll
+*.so
+*.dylib
+*.lib
+*.exp
+*.obj
+
+# Generated Cython annotations
+*.html
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+#
+asm2dmodel/
+c_core/
+c_sim/
+
+#
+notes.txt
+setup.py
+setup_build_ext.py
+smoke_test_api.py
+README_API.txt
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Sphinx build output only
+docs/build/
+docs/_build/
+
+# Keep documentation and legal files tracked
+!docs/
+!docs/**
+!README.md
+!LICENSE
+!THIRD_PARTY_NOTICES.md
+
+!.github/
+!.github/**

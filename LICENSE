@@ -1,0 +1,43 @@
+asm2dmodel — Upstream Agreement / Academic-Use Notice
+
+This distribution contains compiled Python extension modules derived from the "ASM2d model" implementation within the BSM1 platform.
+
+The upstream DTU/LU agreement provided by the user is reproduced below as the governing upstream notice for the underlying model implementation.
+
+Source of upstream agreement:
+"ASM1, 2d & 3 module within BSM1 — Agreement with Technical University of Denmark (DTU), Lund University (LU), Nov 2015"
+
+-------------------------------------------------------------------------------
+Technical University of Denmark
+Department of Chemical and Biochemical Engineering
+Søltofts Plads
+Building 229
+DK-2800 Kgs. Lyngby
+Denmark
+
+ASM1, 2d & 3 module within BSM1
+Agreement with Technical University of Denmark (DTU),
+Lund University (LU),
+Nov 2015
+
+Dear Colleague,
+
+The ASM1, 2d and 3 module implementation within the BSM1 platform you have just received represent the implementations from DTU and LU.
+
+The models are available for the Matlab®/Simulink® platform and have been written in C (incorporated into Simulink as C Mex S-functions). You need to compile the C-files for your own processor/computer (use the mex command within Matlab, the internal compiler will work fine). We have used Matlab release 2013b but the models will also work fine on later releases.
+
+The module includes aqueous-phase chemistry descriptions interfaced with ASM1, ASM2d and ASM3, the details of which can be found in Flores-Alsina et al., 2012. Specifically, the implementations are made to fit into the framework of the Benchmark Simulation Models, which is currently being developed by the IWA Task Group on Benchmarking of Control Strategies for WWTPs. This also means that some details of the current implementation may still change as the development of the benchmark continues.
+
+In principle, we provide these implementations for free in a true academic spirit and can therefore not offer any traditional support. You may contact us to discuss various aspects of the models, but we do not guarantee that we can find time to assist you. However, we do ask you to:
+
+• Send us feedback in case you find errors or possible improvements to the implementations or if you come across operational situations where any of the implementations behave differently or strangely compared to others;
+• Send us copies of scientific papers you write, which are to some extent based on the use of any of these model implementations;
+• Please acknowledge the work that has been carried out by us in any papers you publish where the use of our model implementations have had an impact.
+
+We hope that you will enjoy and benefit from the use of these models and also that it may lead to more scientific collaboration between our groups in the future. You are always welcome to contact us on such matters.
+
+Sincerely,
+
+Xavier Flores-Alsina
+Krist V. Gernaey
+Ulf Jeppsson
