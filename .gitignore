@@ -45,6 +45,8 @@ setup.py
 setup_build_ext.py
 smoke_test_api.py
 README_API.txt
+generate_cython_c_files.py
+pyproject.toml
 
 # Test / coverage
 .pytest_cache/
