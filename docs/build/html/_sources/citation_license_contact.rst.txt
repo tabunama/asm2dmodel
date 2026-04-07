@@ -13,7 +13,7 @@ Upstream license agreement and attribution
 
 The asm2dmodel package is based on a ASM2d / BSM1 implementation within the BSM1 framework.
 
-The upstream DTU/LU academic-use notice is included in ``LICENSE``. The package-specific attribution and scope notes are included in ``THIRD_PARTY_NOTICES.md``.
+The upstream DTU/LU notice is included in ``LICENSE``. The package-specific attribution and scope notes are included in ``THIRD_PARTY_NOTICES.md``.
 
 MATLAB/Simulink/C original source attribution named in the current package license and notice files includes:
 
