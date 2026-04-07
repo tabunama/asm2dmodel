@@ -4,7 +4,7 @@ This distribution contains compiled extensions derived from the the ASM2d reacto
 
 Upstream terms
 
-- The upstream DTU/LU agreement / academic-use notice is included in the file: LICENSE.
+- The upstream DTU/LU notice is included in the file: LICENSE.
 
 Requested acknowledgements
 
