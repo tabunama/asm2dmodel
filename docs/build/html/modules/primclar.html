@@ -20,8 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Two-stream combiner module" href="combiner.html" />
-    <link rel="prev" title="Citation, License and Contact" href="../citation_license_contact.html" /> 
+    <link rel="prev" title="One-dimensional settler module" href="settler1d.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,13 +49,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../citation_license_contact.html">Citation, License and Contact</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">ASM2d reactor module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asm2d.html">ASM2d reactor module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="combiner.html">Two-stream combiner module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carboncombiner.html">External carbon combiner module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metalcombiner.html">Metal combiner module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyddelay.html">Hydraulic delay module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="settler1d.html">One-dimensional settler module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="primclar.html">Primary clarifier module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Primary clarifier module</a></li>
 </ul>
 
         </div>
@@ -73,9 +72,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">ASM2d reactor module</li>
+      <li class="breadcrumb-item active">Primary clarifier module</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/modules/asm2d.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/modules/primclar.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -83,33 +82,51 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="asm2d-reactor-module">
-<h1>ASM2d reactor module<a class="headerlink" href="#asm2d-reactor-module" title="Link to this heading"></a></h1>
+  <section id="primary-clarifier-module">
+<h1>Primary clarifier module<a class="headerlink" href="#primary-clarifier-module" title="Link to this heading"></a></h1>
 <section id="import">
 <h2>Import<a class="headerlink" href="#import" title="Link to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">asm2dmodel</span> <span class="kn">import</span> <span class="n">asm2d</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">asm2dmodel</span> <span class="kn">import</span> <span class="n">primclar</span>
 </pre></div>
 </div>
 </section>
 <section id="class">
 <h2>Class<a class="headerlink" href="#class" title="Link to this heading"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">ASM2D(XINIT3,</span> <span class="pre">PAR3,</span> <span class="pre">VOL3,</span> <span class="pre">SOSAT3,</span> <span class="pre">DECAY,</span> <span class="pre">TEMPMODEL,</span> <span class="pre">ACTIVATE)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">PrimClar(PAR)</span></code></p>
 </section>
 <section id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">XINIT3</span></code>: initial ASM2d state vector</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PAR3</span></code>: ASM2d parameter vector</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">VOL3</span></code>: reactor volume</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">SOSAT3</span></code>: oxygen saturation value</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">DECAY</span></code>: decay-mode flag</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">TEMPMODEL</span></code>: temperature model flag</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ACTIVATE</span></code>: dummy-state activation flag</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PAR</span></code>: primary-clarifier parameter vector, length 4</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">PAR[0]</span></code>: <code class="docutils literal notranslate"><span class="pre">sec2_perc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PAR[1]</span></code>: <code class="docutils literal notranslate"><span class="pre">TSS_removal_perc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PAR[2]</span></code>: <code class="docutils literal notranslate"><span class="pre">inorganic_factor</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PAR[3]</span></code>: <code class="docutils literal notranslate"><span class="pre">inorganic_factor_P</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">outputs(u,</span> <span class="pre">PAR)</span></code></dt><dd><p>Split a 26-state ASM2d influent vector into a 52-state output vector.</p>
+</dd>
+</dl>
+</section>
+<section id="output-structure">
+<h2>Output structure<a class="headerlink" href="#output-structure" title="Link to this heading"></a></h2>
+<p>The returned vector has length 52:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">y[0:26]</span></code>: overflow / primary effluent</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y[26:52]</span></code>: underflow / primary sludge</p></li>
 </ul>
 </section>
 <section id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
-<p>This page documents the module-level interface intended for future flowsheet construction.</p>
+<p>This module is an algebraic primary clarifier for the 26-state ASM2d stream interface.
+Soluble states are passed through, while particulate states are separated according to the clarifier parameters.
+It is intended for use before the biological reactors.</p>
 </section>
 </section>
 
@@ -117,8 +134,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../citation_license_contact.html" class="btn btn-neutral float-left" title="Citation, License and Contact" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="combiner.html" class="btn btn-neutral float-right" title="Two-stream combiner module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="settler1d.html" class="btn btn-neutral float-left" title="One-dimensional settler module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

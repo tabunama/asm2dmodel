@@ -20,6 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Primary clarifier module" href="primclar.html" />
     <link rel="prev" title="Hydraulic delay module" href="hyddelay.html" /> 
 </head>
 
@@ -55,6 +56,7 @@
 <li class="toctree-l1"><a class="reference internal" href="metalcombiner.html">Metal combiner module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hyddelay.html">Hydraulic delay module</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">One-dimensional settler module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="primclar.html">Primary clarifier module</a></li>
 </ul>
 
         </div>
@@ -96,19 +98,31 @@
 <section id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">SETTLERINIT2D</span></code>: initial settler state vector</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">SETTLERPAR2D</span></code>: settler parameter vector</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">DIM2D</span></code>: settler dimensions</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">LAYER2D</span></code>: settler layer definition</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ASM2DPAR</span></code>: ASM2d parameter vector</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SETTLERINIT2D</span></code>: initial settler state vector, length 250</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SETTLERPAR2D</span></code>: settler sedimentation parameter vector, length 6</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DIM2D</span></code>: settler dimensions, length 2</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LAYER2D</span></code>: settler layer definition, length 2</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ASM2DPAR</span></code>: ASM2d parameter vector, length 73</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">DECAY</span></code>: decay-mode flag</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SETTLER</span></code>: reactive-settler flag</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">TEMPMODEL</span></code>: temperature model flag</p></li>
 </ul>
 </section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">init(XINIT)</span></code></dt><dd><p>Initialize the internal 250-state settler vector.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">outputs(x,</span> <span class="pre">u,</span> <span class="pre">tempmodel)</span></code></dt><dd><p>Return the 316-output vector from the current settler state and 28-input feed vector.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rhs(t,</span> <span class="pre">x,</span> <span class="pre">u,</span> <span class="pre">SEDPAR,</span> <span class="pre">DIM,</span> <span class="pre">LAYER,</span> <span class="pre">ASMPAR,</span> <span class="pre">decay_switch,</span> <span class="pre">reactive_settler,</span> <span class="pre">tempmodel)</span></code></dt><dd><p>Return the 250-state derivative vector.</p>
+</dd>
+</dl>
+</section>
 <section id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
-<p>This page documents the module-level interface intended for future flowsheet construction.</p>
+<p>This module represents the dynamic 10-layer secondary/final clarifier used after the ASM2d biological reactors.
+It is not intended for primary clarification. For the primary clarifier, use the separate <code class="docutils literal notranslate"><span class="pre">primclar</span></code> module.</p>
 </section>
 </section>
 
@@ -117,6 +131,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="hyddelay.html" class="btn btn-neutral float-left" title="Hydraulic delay module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="primclar.html" class="btn btn-neutral float-right" title="Primary clarifier module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

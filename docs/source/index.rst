@@ -8,7 +8,7 @@ Quick import
 
 .. code-block:: python
 
-   from asm2dmodel import asm2d, combiner, carboncombiner, metalcombiner, hyddelay, settler1d
+   from asm2dmodel import asm2d, combiner, carboncombiner, metalcombiner, hyddelay, settler1d, primclar
 
 Contents
 --------
@@ -28,3 +28,4 @@ Contents
    modules/metalcombiner
    modules/hyddelay
    modules/settler1d
+   modules/primclar

@@ -6,7 +6,7 @@ Top-level import
 
 .. code-block:: python
 
-   from asm2dmodel import asm2d, combiner, carboncombiner, metalcombiner, hyddelay, settler1d
+   from asm2dmodel import asm2d, combiner, carboncombiner, metalcombiner, hyddelay, settler1d, primclar
 
 Modules
 -------
@@ -19,3 +19,4 @@ The package currently provides:
 - ``metalcombiner``
 - ``hyddelay``
 - ``settler1d``
+- ``primclar``
